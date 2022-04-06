@@ -7,7 +7,7 @@ with open("README.MD") as readme_file:
 setup_args = dict(
     name="miniq",
     packages=find_packages(),
-    version="0.0.1",
+    version="0.0.2",
     description="Python lib for miniQ",
     long_description=README,
     long_description_content_type="text/markdown",
