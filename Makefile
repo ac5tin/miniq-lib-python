@@ -33,3 +33,6 @@ lint:
 
 @package/publish:
 	python -m twine upload dist/* --verbose
+
+@packages/publish-test:
+	twine upload --repository testpypi dist/*
