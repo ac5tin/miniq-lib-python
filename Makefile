@@ -1,5 +1,10 @@
 TAG := $(shell git describe --tags `git rev-list --tags --max-count=1`)
 
+prepare:
+	pip install --upgrade pip
+	pip install -r requirements.txt
+	pip install pylint grpcio-tools
+
 check/tag:
 	@echo "TAG: $(TAG)"
 	@echo -n "Are you sure? [y/N] " && read ans && [ $${ans:-N} = y ]
