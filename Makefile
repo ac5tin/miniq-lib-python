@@ -28,7 +28,7 @@ lint:
 
 
 
-@package/bundle:
+@package/bundle: @packages/clean
 	python setup.py sdist bdist_wheel
 
 @package/publish:
@@ -36,3 +36,8 @@ lint:
 
 @packages/publish-test:
 	twine upload --repository testpypi dist/*
+
+@packages/clean:
+	rm -rf ./miniq.egg-info
+	rm -rf ./build
+	rm -rf ./dist
