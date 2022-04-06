@@ -3,7 +3,7 @@ TAG := $(shell git describe --tags `git rev-list --tags --max-count=1`)
 prepare:
 	pip install --upgrade pip
 	pip install -r requirements.txt
-	pip install pylint grpcio-tools setuptools wheel
+	pip install pylint grpcio-tools setuptools wheel twine
 
 check/tag:
 	@echo "TAG: $(TAG)"
@@ -30,3 +30,6 @@ lint:
 
 @package/bundle:
 	python setup.py sdist bdist_wheel
+
+@package/publish:
+	python -m twine upload dist/* --verbose
