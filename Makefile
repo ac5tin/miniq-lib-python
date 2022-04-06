@@ -3,7 +3,7 @@ TAG := $(shell git describe --tags `git rev-list --tags --max-count=1`)
 prepare:
 	pip install --upgrade pip
 	pip install -r requirements.txt
-	pip install pylint grpcio-tools
+	pip install pylint grpcio-tools setuptools wheel
 
 check/tag:
 	@echo "TAG: $(TAG)"
@@ -25,3 +25,8 @@ protoc/clean:
 
 lint:
 	pylint miniq/*.py
+
+
+
+@package/bundle:
+	python setup.py sdist bdist_wheel
