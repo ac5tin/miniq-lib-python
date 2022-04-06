@@ -15,6 +15,9 @@ test:
 
 protoc: protoc/clean
 	python -m grpc_tools.protoc -I ./miniq/protobuf/ --python_out=./miniq/protobuf/ --grpc_python_out=./miniq/protobuf/ ./miniq/protobuf/*.proto
+	@cd ./miniq/protobuf && for file in *.py; do \
+		sed -i "/import .*_pb2/ s/^import /from . import /g" $$file; \
+	done
 
 protoc/clean:
 	rm -rf ./miniq/protobuf/*.py

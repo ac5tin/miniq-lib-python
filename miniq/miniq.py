@@ -1,6 +1,7 @@
 import grpc
-import miniq.protobuf.queue_pb2_grpc as pb2_grpc
-import miniq.protobuf.queue_pb2 as pb2
+
+from miniq.protobuf import queue_pb2 as pb2
+from miniq.protobuf import queue_pb2_grpc as pb2_grpc
 
 
 class MiniQ:

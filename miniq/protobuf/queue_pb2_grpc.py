@@ -3,7 +3,7 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import queue_pb2 as queue__pb2
+from . import queue_pb2 as queue__pb2
 
 
 class MiniQStub(object):
